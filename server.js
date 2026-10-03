@@ -11,8 +11,12 @@ const app = express();
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://expense-tracker-api-ace-d1b4.vercel.app"
-  ]
+    "https://expense-tracker-kajbr17ho-ace-d1b4.vercel.app",
+    "https://expense-tracker-jgit00xba-ace-d1b4.vercel.app",
+    "https://expense-tracker-api-git-main-ace-d1b4.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
 app.use(express.json());
 app.use("/api/expenses", expenseRoutes);
