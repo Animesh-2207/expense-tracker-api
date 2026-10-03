@@ -1,0 +1,22 @@
+
+# Dependencies
+node_modules/
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Allow an example environment file
+!.env.example
+
+# Generated Prisma client
+generated/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor and operating system files
+.vscode/
+.DS_Store
+Thumbs.db
