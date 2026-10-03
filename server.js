@@ -8,15 +8,25 @@ require("dotenv").config();
 const app = express();
 
 // Middleware
+const allowedOrigins = [
+  "http://localhost:5173",
+  process.env.FRONTEND_URL, // your main Vercel domain, set on Render
+];
+
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://expense-tracker-kajbr17ho-ace-d1b4.vercel.app",
-    "https://expense-tracker-jgit00xba-ace-d1b4.vercel.app",
-    "https://expense-tracker-api-git-main-ace-d1b4.vercel.app"
-  ],
+  origin: (origin, callback) => {
+    // allow requests with no origin (Postman, curl, health checks)
+    if (!origin) return callback(null, true);
+
+    const isAllowed =
+      allowedOrigins.includes(origin) ||
+      /^https:\/\/expense-tracker-[a-z0-9-]+-ace-d1b4\.vercel\.app$/.test(origin);
+
+    if (isAllowed) return callback(null, true);
+    return callback(new Error("Not allowed by CORS"));
+  },
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
+  allowedHeaders: ["Content-Type", "Authorization"],
 }));
 app.use(express.json());
 app.use("/api/expenses", expenseRoutes);
