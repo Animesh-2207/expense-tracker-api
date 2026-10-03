@@ -1,5 +1,14 @@
 # URL-https://expense-tracker-56yy6260j-ace-d1b4.vercel.app/login
 
+## Screenshots
+
+### Login Page
+![ExpenseTrackr Login](screenshots/login.png)
+
+
+### Dashboard
+![ExpenseTrackr Dashboard](screenshots/dashboard.png)
+
 # Personal Expense Tracker API
 
 A RESTful backend API for managing personal expenses, built using Node.js, Express.js, PostgreSQL, Prisma ORM, and JWT authentication.
