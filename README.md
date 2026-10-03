@@ -3,11 +3,10 @@
 ## Screenshots
 
 ### Login Page
-![ExpenseTrackr Login](screenshots/login.png)
-
+<img width="1893" height="901" alt="Screenshot 2026-10-03 191155" src="https://github.com/user-attachments/assets/dc3b8738-c76d-48df-aa61-b1bd5d848efa" />
 
 ### Dashboard
-![ExpenseTrackr Dashboard](screenshots/dashboard.png)
+<img width="1897" height="899" alt="Screenshot 2026-10-03 191213" src="https://github.com/user-attachments/assets/3e129544-205d-461e-b4bd-9ee1adbcb10f" />
 
 # Personal Expense Tracker API
 
