@@ -8,7 +8,12 @@ require("dotenv").config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://expense-tracker-api-three-ebon.vercel.app/"
+  ]
+}));
 app.use(express.json());
 app.use("/api/expenses", expenseRoutes);
 app.use("/api/auth", authRoutes);
